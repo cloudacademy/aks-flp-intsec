@@ -19,8 +19,8 @@ Here is the list of current labs available:
 
 *************************************************************************************
 *        1. AKS faling to pull image from ACR
-*        2. AKS MSI issue (not ready yet)
-*        3. AKS policy issue (not ready yet)
+*        2. AKS identity issues
+*        3. AKS cluster API access issue
 *************************************************************************************
 
 "-l|--lab" Lab scenario to deploy (3 possible options)
