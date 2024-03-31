@@ -382,16 +382,16 @@ az_login_check
 
 if [ $LAB_SCENARIO -eq 1 ] && [ $VALIDATE -eq 0 ]
 then
-    check_resourcegroup_cluster
+    check_resourcegroup_cluster $RESOURCE_GROUP $CLUSTER_NAME
     lab_scenario_1
 
 elif [ $LAB_SCENARIO -eq 1 ] && [ $VALIDATE -eq 1 ]
 then
-    lab_scenario_1_validation
+    lab_scenario_1_validation $RESOURCE_GROUP $CLUSTER_NAME
 
 elif [ $LAB_SCENARIO -eq 2 ] && [ $VALIDATE -eq 0 ]
 then
-    check_resourcegroup_cluster
+    check_resourcegroup_cluster $RESOURCE_GROUP $CLUSTER_NAME
     lab_scenario_2
 
 elif [ $LAB_SCENARIO -eq 2 ] && [ $VALIDATE -eq 1 ]
@@ -400,7 +400,7 @@ then
 
 elif [ $LAB_SCENARIO -eq 3 ] && [ $VALIDATE -eq 0 ]
 then
-    check_resourcegroup_cluster
+    check_resourcegroup_cluster $RESOURCE_GROUP $CLUSTER_NAME
     lab_scenario_3
 
 elif [ $LAB_SCENARIO -eq 3 ] && [ $VALIDATE -eq 1 ]
