@@ -386,7 +386,7 @@ then
 
 elif [ $LAB_SCENARIO -eq 1 ] && [ $VALIDATE -eq 1 ]
 then
-    lab_scenario_1_validation $RESOURCE_GROUP $CLUSTER_NAME
+    lab_scenario_1_validation
 
 elif [ $LAB_SCENARIO -eq 2 ] && [ $VALIDATE -eq 0 ]
 then
