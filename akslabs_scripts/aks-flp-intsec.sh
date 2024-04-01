@@ -234,7 +234,7 @@ function lab_scenario_2 () {
     
     echo -e "\n\n--> Please wait while we are preparing the environment for you to troubleshoot...\n"
     while true; do for s in / - \\ \|; do printf "\r$s"; sleep 1; done; done &
-    az ad sp credential reset --name $SP_ID --query password &>/dev/null
+    az ad sp credential reset --id $SP_ID --query password &>/dev/null
     CLUSTER_URI="$(az aks show -g $RESOURCE_GROUP -n $CLUSTER_NAME --query id -o tsv)"
     sleep 110
     az aks scale -g $RESOURCE_GROUP -n $CLUSTER_NAME -c 2 &>/dev/null
