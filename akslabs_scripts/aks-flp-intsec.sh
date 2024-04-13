@@ -236,7 +236,7 @@ function lab_scenario_2 () {
     while true; do for s in / - \\ \|; do printf "\r$s"; sleep 1; done; done &
     az ad app credential reset --id $SP_ID --query password &>/dev/null
     CLUSTER_URI="$(az aks show -g $RESOURCE_GROUP -n $CLUSTER_NAME --query id -o tsv)"
-    sleep 300
+    sleep 600
     az aks scale -g $RESOURCE_GROUP -n $CLUSTER_NAME -c 2 &>/dev/null
     kill $!; trap 'kill $!' SIGTERM
 
