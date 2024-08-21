@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install bash-completion apt-transport-https gnupg 
     && echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list \
     && echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ bionic main" > /etc/apt/sources.list.d/azure-cli.list \
     && apt-get update && apt-get install -y kubectl azure-cli \
+    && sed -i 's/LOGIN_TIMEOUT/# LOGIN_TIMEOUT/g' /etc/login.defs \
+    && echo LOGIN_TIMEOUT 0 >> /etc/login.defs \
     && apt-get clean all
 
 COPY ./bashrc /root/.bashrc
